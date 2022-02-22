@@ -1,4 +1,4 @@
-package com.example.awesome_template;
+package tech.ucoon.awesome_template;
 
 import io.flutter.embedding.android.FlutterActivity;
 

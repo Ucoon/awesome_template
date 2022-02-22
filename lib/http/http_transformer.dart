@@ -26,7 +26,7 @@ class DefaultHttpTransformer extends HttpTransformer {
 
   @override
   int succeedCode() {
-    return 2000;
+    return 20000;
   }
 
   ///单例对象

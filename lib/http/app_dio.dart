@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/adapter.dart';
@@ -6,6 +7,15 @@ import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'http_config.dart';
+import 'interceptor/error_interceptor.dart';
+
+_parseAndDecode(String response) {
+  return jsonDecode(response);
+}
+
+parseJson(String text) {
+  return compute(_parseAndDecode, text);
+}
 
 class AppDio with DioMixin implements Dio {
   AppDio({BaseOptions? options, HttpConfig? dioConfig}) {
@@ -17,6 +27,8 @@ class AppDio with DioMixin implements Dio {
       receiveTimeout: dioConfig?.receiveTimeout,
     )..headers = dioConfig?.headers;
     this.options = options;
+    // 针对复杂json解析会造成卡顿问题，dio给出的方案是使用compute方法在后台去解析json
+    (transformer as DefaultTransformer).jsonDecodeCallback = parseJson;
 
     /// DioCacheManager
     final cacheOptions = CacheOptions(
@@ -28,6 +40,8 @@ class AppDio with DioMixin implements Dio {
       maxStale: const Duration(days: 7),
     );
     interceptors.add(DioCacheInterceptor(options: cacheOptions));
+    //添加错误处理拦截器
+    interceptors.add(ErrorInterceptor());
 
     ///Cookie管理
     if (dioConfig?.cookiesPath?.isNotEmpty ?? false) {
@@ -53,7 +67,7 @@ class AppDio with DioMixin implements Dio {
     }
   }
 
-  setProxy(String proxy) {
+  void setProxy(String proxy) {
     (httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
         (client) {
       client.findProxy = (uri) {
