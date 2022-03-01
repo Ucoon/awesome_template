@@ -33,7 +33,11 @@ dependencies:
   dio_cache_interceptor: ^3.2.5
   dio_cookie_manager: ^2.0.0
   cookie_jar: ^3.0.1
-
+  quiver: ^3.0.1+1
+  flutter_screenutil: ^5.3.1
+  path_tree: ^3.0.0
+  flutter_web_plugins:
+    sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'http_exceptions.dart';
 import 'http_response.dart';
 import 'http_transformer.dart';
@@ -11,7 +12,7 @@ HttpResponse handleResponse(Response? response,
     return HttpResponse.failureFromResponse();
   }
   httpTransformer ??= DefaultHttpTransformer();
-  print('handleResponse ${_isTokenTimeout(response.statusCode)}');
+  debugPrint('handleResponse ${_isTokenTimeout(response.statusCode)}');
   if (_isTokenTimeout(response.statusCode)) {
     return HttpResponse.failureFromError(UnauthorisedException(
       message: '没有权限',
