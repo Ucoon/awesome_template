@@ -33,7 +33,7 @@ class RRouterDelegate extends RouterDelegate<Page<dynamic>>
       pages: List.from(_routerStack),
       onPopPage: _onPopPage,
       observers: [
-        rRouter._observer,
+        RRouter._observer,
         ...observers,
       ],
     );
@@ -112,7 +112,7 @@ class RRouterDelegate extends RouterDelegate<Page<dynamic>>
       _markNeedsUpdate();
       return SynchronousFuture(true);
     }
-    return rRouter._popHome();
+    return RRouter._popHome();
   }
 
   void pop<T extends Object?>([T? result]) {

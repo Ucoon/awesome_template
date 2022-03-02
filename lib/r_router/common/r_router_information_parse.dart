@@ -22,7 +22,7 @@ class RRouterInformationParser extends RouteInformationParser<Page<dynamic>> {
       );
     }
     WidgetBuilder? builder;
-    NavigatorRoute? handler = rRouter._register.match(ctx.uri);
+    NavigatorRoute? handler = RRouter._register.match(ctx.uri);
     if (handler != null) {
       final result = await handler(ctx);
       if (result is WidgetBuilder) {
@@ -33,12 +33,12 @@ class RRouterInformationParser extends RouteInformationParser<Page<dynamic>> {
       }
       _pageTransitions = handler.defaultPageTransaction;
     }
-    _pageTransitions ??= rRouter._defaultTransitionBuilder;
+    _pageTransitions ??= RRouter._defaultTransitionBuilder;
 
     builder ??=
-        (BuildContext context) => rRouter._errorPage.notFoundPage(context, ctx);
+        (BuildContext context) => RRouter._errorPage.notFoundPage(context, ctx);
     return SynchronousFuture(
-        rRouter._pageNamed(ctx, builder, _pageTransitions));
+        RRouter._pageNamed(ctx, builder, _pageTransitions));
   }
 
   @override

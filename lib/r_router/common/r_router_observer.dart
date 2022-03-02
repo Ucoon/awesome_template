@@ -15,7 +15,7 @@ class RRouterObserver extends NavigatorObserver {
         _routeList.add(path);
       }
     }
-    rRouter._print(
+    RRouter._print(
         'RRouter --> did push $path , previous $previousPath , current top $topPath');
   }
 
@@ -34,7 +34,7 @@ class RRouterObserver extends NavigatorObserver {
         _routeList.add(previousPath);
       }
     }
-    rRouter._print(
+    RRouter._print(
         'RRouter --> did pop $path , previous $previousPath , current top $topPath');
   }
 
@@ -53,7 +53,7 @@ class RRouterObserver extends NavigatorObserver {
         _routeList.add(previousPath);
       }
     }
-    rRouter._print(
+    RRouter._print(
         'RRouter --> did remove $path , previous $previousPath , current top $topPath');
   }
 
@@ -72,7 +72,7 @@ class RRouterObserver extends NavigatorObserver {
         _routeList.add(path);
       }
     }
-    rRouter._print(
+    RRouter._print(
         'RRouter --> did replace $path , old $oldPath , current top $topPath');
   }
 }

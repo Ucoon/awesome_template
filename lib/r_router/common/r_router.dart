@@ -10,6 +10,7 @@ import '../page/error_page.dart';
 import '../utils/string.dart';
 import 'web_config/path_strategy_io.dart'
     if (dart.library.html) 'web_config/path_strategy_web.dart';
+import '../translate_builder/transaction_builder.dart';
 
 part 'context.dart';
 
@@ -27,7 +28,7 @@ part 'r_router_register.dart';
 
 part 'redirect.dart';
 
-RRouterBasic rRouter = RRouterBasic();
+RRouterBasic RRouter = RRouterBasic();
 
 typedef PopHome = Future<bool> Function();
 
@@ -97,7 +98,7 @@ class RRouterBasic {
       PageBuilder? pageBuilder,
       PopHome? popHome})
       : _errorPage = errorPage ?? DefaultErrorPage(),
-        _defaultTransitionBuilder = const ZoomPageTransitionsBuilder(),
+        _defaultTransitionBuilder = DefaultTransitionBuilder(),
         _interceptor = interceptor ?? <RouteInterceptor>[],
         _pageBuilder = pageBuilder ?? _kDefaultCustomPageBuilder,
         _popHome = popHome ?? _kDefaultPopHome;
