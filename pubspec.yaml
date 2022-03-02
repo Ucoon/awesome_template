@@ -29,15 +29,28 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # 国际化
+  flutter_localizations:
+    sdk: flutter
+
+  # http
   dio: ^4.0.4
   dio_cache_interceptor: ^3.2.5
   dio_cookie_manager: ^2.0.0
   cookie_jar: ^3.0.1
-  quiver: ^3.0.1+1
+
+  # 屏幕适配
   flutter_screenutil: ^5.3.1
+
+  # 路由
   path_tree: ^3.0.0
   flutter_web_plugins:
     sdk: flutter
+
+  # 状态管理
+  provider: ^6.0.2
+
+  quiver: ^3.0.1+1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -95,3 +108,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true

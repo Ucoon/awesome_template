@@ -27,7 +27,7 @@ class RRouterDelegate extends RouterDelegate<Page<dynamic>>
   @override
   Widget build(BuildContext context) {
     assert(!_isDisposed);
-    if (_routerStack.isEmpty) return Container();
+    if (_routerStack.isEmpty) return Container(color: Colors.white);
 
     return Navigator(
       pages: List.from(_routerStack),
