@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:awesome_template/app/routes/app_routes.dart';
-import 'package:awesome_template/r_router/r_router.dart';
+import '/app/routes/app_routes.dart';
+import '/r_router/r_router.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);

@@ -1,6 +1,6 @@
-import 'package:awesome_template/app/routes/app_routes.dart';
-import 'package:awesome_template/r_router/r_router.dart';
 import 'package:flutter/material.dart';
+import '/app/routes/app_routes.dart';
+import '/r_router/r_router.dart';
 
 class ThirdPage extends StatelessWidget {
   const ThirdPage({Key? key}) : super(key: key);

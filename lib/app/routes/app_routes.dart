@@ -3,8 +3,8 @@ import '../modules/home/four_page.dart';
 import '../modules/home/second_page.dart';
 import '../modules/home/third_page.dart';
 import '../modules/home/home_page.dart';
-import 'package:awesome_template/r_router/page/error_page.dart';
-import 'package:awesome_template/r_router/r_router.dart';
+import '/r_router/page/error_page.dart';
+import '/r_router/r_router.dart';
 
 class AppRoutes {
   static const String root = '/';
