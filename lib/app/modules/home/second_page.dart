@@ -14,10 +14,8 @@ class SecondPage extends StatelessWidget {
       body: Column(
         children: <Widget>[
           TextButton(
-            onPressed: () {
-              RRouter.navigateTo(AppRoutes.thirdPage);
-            },
-            child: Text('${context.readCtx.body['param1']}'),
+            onPressed: () {},
+            child: const Text('Get'),
           ),
         ],
       ),

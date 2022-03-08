@@ -41,14 +41,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: <Widget>[
           TextButton(
-            onPressed: () {
-              RRouter.navigateTo(
-                AppRoutes.secondPage,
-                body: {
-                  'param1': '我来自第一页',
-                },
-              );
-            },
+            onPressed: () {},
             child: const Text('Get'),
           ),
         ],

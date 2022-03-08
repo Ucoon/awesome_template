@@ -1,3 +1,7 @@
 {
-  "app_name": "awesome_template"
+  "app_name": "awesome_template",
+  "home": "首页",
+  "mine_order": "我的订单",
+  "knowledge_popularization": "知识科普",
+  "personal_center": "个人中心"
 }

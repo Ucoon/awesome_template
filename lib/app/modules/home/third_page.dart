@@ -14,9 +14,7 @@ class ThirdPage extends StatelessWidget {
       body: Column(
         children: <Widget>[
           TextButton(
-            onPressed: () {
-              RRouter.navigateTo(AppRoutes.fourPage);
-            },
+            onPressed: () {},
             child: const Text('Get'),
           ),
         ],

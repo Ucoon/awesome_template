@@ -1,3 +1,4 @@
+import 'package:awesome_template/app/modules/main_page.dart';
 import 'package:flutter/material.dart';
 import '../modules/home/four_page.dart';
 import '../modules/home/second_page.dart';
@@ -8,9 +9,6 @@ import '/r_router/r_router.dart';
 
 class AppRoutes {
   static const String root = '/';
-  static const String secondPage = '/secondPage';
-  static const String thirdPage = '/thirdPage';
-  static const String fourPage = '/fourPage';
 
   static void setupRoutes() {
     RRouter.setPathStrategy(true)
@@ -22,23 +20,8 @@ class AppRoutes {
     return <NavigatorRoute>[
       NavigatorRoute(
         root,
-        (routeContext) => const HomePage(title: 'My Home'),
-      ),
-      NavigatorRoute(
-        secondPage,
-        (routeContext) => const SecondPage(),
-      ),
-      NavigatorRoute(thirdPage, (routeContext) => const ThirdPage(),
-          interceptor: <RouteInterceptor>[
-            (Context routeContext) {
-              RRouter.navigateTo(fourPage);
-              return true;
-            },
-          ]),
-      NavigatorRoute(
-        fourPage,
-        (routeContext) => const FourPage(),
-      ),
+        (routeContext) => const MainPage(),
+      )
     ];
   }
 
