@@ -14,9 +14,9 @@ class ApplicationUtil {
             Duration(seconds: second)) {
       _lastPopTime = DateTime.now();
       if (toastFunc != null) toastFunc();
-      return Future.value(false);
+      return Future.value(true);
     }
-    return Future.value(true);
+    return Future.value(false);
   }
 
   ///直接退出应用

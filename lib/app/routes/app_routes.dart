@@ -1,14 +1,14 @@
-import 'package:awesome_template/app/modules/main_page.dart';
+import 'package:awesome_template/app/modules/car/views/add_car_page.dart';
 import 'package:flutter/material.dart';
-import '../modules/home/four_page.dart';
-import '../modules/home/second_page.dart';
-import '../modules/home/third_page.dart';
-import '../modules/home/home_page.dart';
+import '../modules/car/views/car_page.dart';
+import '../modules/main_page.dart';
 import '/r_router/page/error_page.dart';
 import '/r_router/r_router.dart';
 
 class AppRoutes {
   static const String root = '/';
+  static const String carPage = '/carPage';
+  static const String addCarPage = '/addCarPage';
 
   static void setupRoutes() {
     RRouter.setPathStrategy(true)
@@ -21,7 +21,15 @@ class AppRoutes {
       NavigatorRoute(
         root,
         (routeContext) => const MainPage(),
-      )
+      ),
+      NavigatorRoute(
+        carPage,
+        (routeContext) => const CarPage(),
+      ),
+      NavigatorRoute(
+        addCarPage,
+        (routeContext) => const AddCarPage(),
+      ),
     ];
   }
 

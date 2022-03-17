@@ -50,6 +50,14 @@ dependencies:
   # 状态管理
   provider: ^6.0.2
 
+  # 本地存储
+  shared_preferences: ^2.0.13
+
+  # 本地数据库
+  sqflite: ^2.0.2
+
+  tuple: ^2.0.0
+
   quiver: ^3.0.1+1
 
   # The following adds the Cupertino Icons font to your application.

@@ -33,8 +33,9 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
+    debugPrint('_MainPageState.build');
+    return BackButtonListener(
+      onBackButtonPressed: () {
         return ApplicationUtil.confirmExitApplication(2);
       },
       child: Scaffold(
